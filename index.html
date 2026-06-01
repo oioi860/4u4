@@ -7,15 +7,106 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
 
+<!-- КНОПКА ХОЛОДНОГО ЗВОНКА (плавает слева внизу) -->
+<button class="hot-btn" id="hotCallBtn">
+    📞 Холодный звонок
+</button>
+
+<!-- МОДАЛЬНОЕ ОКНО СКРИПТА -->
+<div class="modal" id="callScriptModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>📞 Холодный звонок — скрипт с выявлением потребности</h3>
+            <button class="close-modal" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <!-- Шаг 0 -->
+            <div class="call-script-section">
+                <h4>🔹 Подготовка (до звонка)</h4>
+                <div class="script-note">✓ Имя контактного лица &nbsp;|&nbsp; ✓ Сегмент (ресторан/фастфуд/beauty) &nbsp;|&nbsp; ✓ Масштаб &nbsp;|&nbsp; ✓ Есть ли QR?</div>
+            </div>
+
+            <!-- Шаг 1 -->
+            <div class="call-script-section">
+                <h4>🔹 Шаг 1. Открытие (10–15 сек)</h4>
+                <div class="script-phrase">«Добрый день, [Имя]! Меня зовут [Имя], компания Яндекс. Я не буду занимать много времени, буквально 30 секунд. Мы сейчас помогаем ресторанам и салонам экономить на эквайринге и автоматически собирать чаевые с отзывами — через один QR-код. Первые 6 месяцев эквайринг 0%. У вас есть 30 секунд сейчас или лучше перезвонить через час?»</div>
+            </div>
+
+            <!-- Шаг 2 -->
+            <div class="call-script-section">
+                <h4>🔹 Шаг 2. Крючок + переход к потребностям</h4>
+                <div class="script-phrase">«Отлично. Я просто хочу понять, актуально ли для вас:<br>— снизить текущие расходы на эквайринг примерно в 2 раза,<br>— увеличить чаевые персоналу без лишних движений,<br>— и получать больше отзывов на Яндекс Картах автоматически.<br><strong>Какой из этих пунктов для вас сейчас важнее?»</strong></div>
+            </div>
+
+            <!-- Шаг 3 -->
+            <div class="call-script-section">
+                <h4>🔹 Шаг 3. Уточняющие вопросы (под боли)</h4>
+                <div class="two-columns">
+                    <div class="script-note"><strong>Если сказал «Эквайринг дорогой»:</strong><br>«Какую ставку сейчас платите? Какой средний месячный оборот по картам?»</div>
+                    <div class="script-note"><strong>Если «Чаевые — проблема»:</strong><br>«Как сейчас получают чаевые? Наличка или переводы? Это влияет на текучку?»</div>
+                    <div class="script-note"><strong>Если «Отзывы не собираем»:</strong><br>«Насколько важен рейтинг в Картах? Сколько тратите на рекламу для привлечения гостя?»</div>
+                    <div class="script-note"><strong>Если «Всё нормально»:</strong><br>«Тогда просто пример: 0% эквайринга на полгода. Может, посчитаем вашу экономию за 5 минут?»</div>
+                </div>
+            </div>
+
+            <!-- Шаг 4 -->
+            <div class="call-script-section">
+                <h4>🔹 Шаг 4. Погружение в цифры</h4>
+                <div class="script-phrase">«Понял, спасибо. Если ваш оборот по картам — [сумма], то с нашими ставками (от 0,4% до 0,8%) вы будете платить [сумма] вместо [сумма]. Экономия в месяц — [сумма]. А за полгода — [сумма]. При этом чаевые и отзывы — бесплатно. Стоит обсудить детали?»</div>
+            </div>
+
+            <!-- Шаг 5 Вопросы по сегментам -->
+            <div class="call-script-section">
+                <h4>🔹 Шаг 5. Выявление скрытых потребностей</h4>
+                <div class="two-columns">
+                    <div class="script-note"><strong>Для ресторанов/фастфуда:</strong><br>• «Как часто жалуются, что долго ждут счёт?»<br>• «Сколько времени уходит на оплату стола сейчас?»<br>• «+20% оборачиваемости — сколько доп. гостей сможете принять?»</div>
+                    <div class="script-note"><strong>Для beauty:</strong><br>• «Мастера уходят из-за неудобных чаевых?»<br>• «Как отслеживаете отзывы на Картах?»<br>• «Хотели бы выделяться в поиске иконкой "Кешбэк" бесплатно?»</div>
+                </div>
+            </div>
+
+            <!-- Шаг 6 Закрытие -->
+            <div class="call-script-section">
+                <h4>🔹 Шаг 6. Закрытие на следующий шаг</h4>
+                <div class="script-phrase">«Давайте я сейчас отправлю вам в WhatsApp/Telegram: расчёт экономии под ваш оборот, пример страницы оплаты и договор. Это ни к чему не обязывает. Как лучше отправить?»</div>
+                <div class="script-note">Если клиент не готов: «Через 2–3 дня пришлю пример расчёта без обязательств. Удобнее WhatsApp или email?»</div>
+            </div>
+
+            <!-- Типовые возражения -->
+            <div class="call-script-section">
+                <h4>🛡️ Быстрые ответы на возражения</h4>
+                <div class="two-columns">
+                    <div class="script-note"><strong>«Нет времени на подключение»</strong><br>«Запуск полностью на нашей стороне — мы сами всё настраиваем. 15 минут всего»</div>
+                    <div class="script-note"><strong>«Пользуемся СБП»</strong><br>«СБП не даёт чаевых, отзывов и подсветки в Картах. Сравните: сколько теряете?»</div>
+                    <div class="script-note"><strong>«Нам это не нужно»</strong><br>«Какой у вас процент отказов при оплате? Многие теряют 5–7% гостей из-за неудобной оплаты»</div>
+                    <div class="script-note"><strong>«Пришлите информацию»</strong><br>«Обязательно. Подскажите примерный оборот по картам — пришлю персональный расчёт»</div>
+                </div>
+            </div>
+
+            <!-- Бланк записи -->
+            <div class="call-script-section">
+                <h4>📋 Бланк для записи во время звонка</h4>
+                <div class="script-note">
+                    Клиент: _________________<br>
+                    Сегмент: ☐ Ресторан ☐ Фастфуд ☐ Beauty<br>
+                    Оборот по картам: ______________<br>
+                    Текущая ставка: ______________<br>
+                    Главная боль: ☐ Эквайринг ☐ Чаевые ☐ Отзывы ☐ Долгая оплата<br>
+                    Следующий шаг: ☐ Отправить расчёт ☐ Перезвонить ☐ Демо
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <!-- ============================================ -->
     <!-- 1. ШАПКА / УТП -->
     <!-- ============================================ -->
     <div class="card">
         <div class="card-header">
             <h2>🧾 Яндекс Чек+Чай · Шпаргалка продаж</h2>
-            <div class="badge">HoReCa + Beauty | Версия 2.1</div>
+            <div class="badge">HoReCa + Beauty | Версия 2.2</div>
         </div>
         <div class="content-inner">
             <div class="utp-block">
@@ -51,54 +142,75 @@
     </div>
 
     <!-- ============================================ -->
-    <!-- 2. ТАБЛИЦА УСЛОВИЙ (HoReCa + Beauty) -->
+    <!-- 2. ЛЕСЕНКА СТАВОК -->
     <!-- ============================================ -->
     <div class="card">
         <div class="card-header">
-            <h2>💰 Тарифы и ставки</h2>
+            <h2>💰 Ставки эквайринга</h2>
             <div class="badge">лесенка от оборота</div>
         </div>
         <div class="content-inner">
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Сегмент</th><th>Макс. ставка</th><th>Лесенка (оборот → ставка)</th><th>Оффер 0%</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong>Ресторан</strong> (обслуживание за столом)</td><td><strong class="accent">0,8%</strong></td><td>0–499 999₽ → 0,8%<br>500 000–999 999₽ → 0,7%<br>от 999 999₽ → 0,5%</td><td>6 месяцев</td></tr>
-                        <tr><td><strong>Фастфуд</strong> (обслуживание за кассой)</td><td><strong>0,7%</strong></td><td>0–299 999₽ → 0,7%<br>300 000–699 999₽ → 0,55%<br>от 699 999₽ → 0,4%</td><td>6 месяцев</td></tr>
-                        <tr><td><strong>Beauty</strong> (салоны, барбершопы)</td><td><strong>1,3%</strong></td><td>0–299 999₽ → 1,3%<br>300 000–599 999₽ → 1,1%<br>от 600 000₽ → 0,9%</td><td>6 месяцев</td></tr>
-                    </tbody>
-                </table>
+            <!-- РЕСТОРАНЫ -->
+            <div class="segment-rates">
+                <div class="segment-title">🍽️ Рестораны (за столом)</div>
+                <div class="rate-max">Максимальная ставка <strong>0,8%</strong></div>
+                <div class="ladder">
+                    <div class="ladder-item"><div class="ladder-range">до 499 999 ₽</div><div class="ladder-rate">0,8%</div></div>
+                    <div class="ladder-item"><div class="ladder-range">500 000 – 999 999 ₽</div><div class="ladder-rate">0,7%</div></div>
+                    <div class="ladder-item high"><div class="ladder-range">от 1 000 000 ₽</div><div class="ladder-rate">0,5%</div></div>
+                </div>
+                <div class="offer-zero">🎁 0% эквайринга первые 6 месяцев</div>
             </div>
-            <div class="note-star">
-                ⭐ <strong>Крупные сети / особые партнёры:</strong> оффер 0% до 24 месяцев + индивидуальные ставки на эквайринг.
+            <div class="divider"></div>
+            <!-- ФАСТФУД -->
+            <div class="segment-rates">
+                <div class="segment-title">🍔 Фастфуд (за кассой)</div>
+                <div class="rate-max">Максимальная ставка <strong>0,7%</strong></div>
+                <div class="ladder">
+                    <div class="ladder-item"><div class="ladder-range">до 299 999 ₽</div><div class="ladder-rate">0,7%</div></div>
+                    <div class="ladder-item"><div class="ladder-range">300 000 – 699 999 ₽</div><div class="ladder-rate">0,55%</div></div>
+                    <div class="ladder-item high"><div class="ladder-range">от 700 000 ₽</div><div class="ladder-rate">0,4%</div></div>
+                </div>
+                <div class="offer-zero">🎁 0% эквайринга первые 6 месяцев</div>
             </div>
+            <div class="divider"></div>
+            <!-- BEAUTY -->
+            <div class="segment-rates">
+                <div class="segment-title">💄 Beauty (салоны, барбершопы)</div>
+                <div class="rate-max">Максимальная ставка <strong>1,3%</strong></div>
+                <div class="ladder">
+                    <div class="ladder-item"><div class="ladder-range">до 299 999 ₽</div><div class="ladder-rate">1,3%</div></div>
+                    <div class="ladder-item"><div class="ladder-range">300 000 – 599 999 ₽</div><div class="ladder-rate">1,1%</div></div>
+                    <div class="ladder-item high"><div class="ladder-range">от 600 000 ₽</div><div class="ladder-rate">0,9%</div></div>
+                </div>
+                <div class="offer-zero">🎁 0% эквайринга первые 6 месяцев</div>
+            </div>
+            <div class="note-star" style="margin-top: 20px;">⭐ <strong>Крупные сети:</strong> оффер 0% до 24 месяцев + индивидуальные ставки на эквайринг.</div>
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- 3. ВОЗРАЖЕНИЯ + ОТВЕТЫ (быстрый отбив) -->
+    <!-- 3. ВОЗРАЖЕНИЯ + ОТВЕТЫ -->
     <!-- ============================================ -->
     <div class="card">
         <div class="card-header">
             <h2>🛡️ Возражения → ответы</h2>
-            <div class="badge">3 секунды на отбив</div>
+            <div class="badge">быстрый отбив</div>
         </div>
         <div class="content-inner">
             <div class="objections-grid">
                 <div class="object-item"><span class="object-q">❓ «У нас низкий чек»</span><span class="object-a">Лесенка подстраивается под оборот. Плюс 6 месяцев 0% — чистая экономия.</span></div>
                 <div class="object-item"><span class="object-q">❓ «Гости не будут сканировать»</span><span class="object-a">Не надо приложений. Работает через камеру телефона, как QR-меню.</span></div>
-                <div class="object-item"><span class="object-q">❓ «У нас своя касса / интеграция»</span><span class="object-a">Не нужно менять кассу. Запуск на нашей стороне.</span></div>
+                <div class="object-item"><span class="object-q">❓ «У нас своя касса»</span><span class="object-a">Не нужно менять кассу. Запуск на нашей стороне.</span></div>
                 <div class="object-item"><span class="object-q">❓ «Сколько стоит подключение?»</span><span class="object-a">Бесплатно. Платите только за эквайринг по факту.</span></div>
-                <div class="object-item"><span class="object-q">❓ «У нас уже есть СБП/эквайринг»</span><span class="object-a">СБП — только оплата. А здесь +чаевые, отзывы и подсветка в поиске. Экономия больше.</span></div>
-                <div class="object-item"><span class="object-q">❓ «Долго настраивать»</span><span class="object-a">Всё делаем мы — от вас только данные юрлица и подпись договора.</span></div>
+                <div class="object-item"><span class="object-q">❓ «У нас уже есть СБП/эквайринг»</span><span class="object-a">СБП — только оплата. А здесь +чаевые, отзывы и подсветка в поиске.</span></div>
+                <div class="object-item"><span class="object-q">❓ «Долго настраивать»</span><span class="object-a">Всё делаем мы — от вас только данные юрлица и подпись.</span></div>
             </div>
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- 4. ФРАЗЫ ДЛЯ ЗАКРЫТИЯ СДЕЛКИ -->
+    <!-- 4. ЗАКРЫВАЮЩИЕ ФРАЗЫ -->
     <!-- ============================================ -->
     <div class="card">
         <div class="card-header">
@@ -126,7 +238,7 @@
     </div>
 
     <!-- ============================================ -->
-    <!-- 5. ДЕТАЛЬНО: ВЫГОДА РЯДОМ (распаковка) -->
+    <!-- 5. ВЫГОДА РЯДОМ — ПОДРОБНО -->
     <!-- ============================================ -->
     <div class="card">
         <div class="card-header">
@@ -141,31 +253,7 @@
                 <div class="benefit-card"><div class="benefit-title">💳 Яндекс Пэй</div><div class="benefit-desc">Информация о лояльности при оплате.</div></div>
                 <div class="benefit-card"><div class="benefit-title">🔍 Другие сервисы</div><div class="benefit-desc">Показ выгоды во всех дискавери-сценариях экосистемы.</div></div>
             </div>
-            <div class="note-star" style="background:#eef3ff;">
-                💡 Ключевая мысль: «Выгода рядом» — это <strong>бесплатная подсветка</strong> вашего заведения, которая увеличивает конверсию из поиска без затрат на рекламу.
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- 6. ИНСТРУКЦИЯ ПО УСКОРЕНИЮ ОБОРАЧИВАЕМОСТИ -->
-    <!-- ============================================ -->
-    <div class="card">
-        <div class="card-header">
-            <h2>⏱️ Как мы увеличиваем оборачиваемость на 20%</h2>
-            <div class="badge">механика</div>
-        </div>
-        <div class="content-inner">
-            <ul style="padding-left: 24px; display: flex; flex-direction: column; gap: 10px; color: #2c3e66;">
-                <li>✅ Гость сканирует единый QR — сразу попадает на страницу оплаты заказа + чаевые.</li>
-                <li>✅ Карта подтягивается автоматически (если привязана к Яндекс ID), ничего вводить не нужно.</li>
-                <li>✅ Оплата занимает 10–15 секунд, официант не носит терминал, нет очереди у кассы.</li>
-                <li>✅ Среднее время ожидания счёта сокращается → стол готов к следующему гостю быстрее на 20%.</li>
-            </ul>
-            <div class="hr-light"></div>
-            <div class="note-block">
-                📊 <strong>Для ресторана с 15 столами и средним чеком 1500₽:</strong> +20% оборачиваемости = дополнительные 3–4 посадки за вечер. Чистая прибыль растёт без доп. расходов.
-            </div>
+            <div class="note-star" style="background:#eef3ff;">💡 «Выгода рядом» — это <strong>бесплатная подсветка</strong> вашего заведения, которая увеличивает конверсию из поиска без затрат на рекламу.</div>
         </div>
     </div>
 
@@ -173,29 +261,50 @@
         Яндекс Чек+Чай — экосистема для роста бизнеса | Шпаргалка менеджера | Обновлено 2026
     </footer>
 </div>
-    <!-- Кнопка переключения темы -->
-    <button class="theme-toggle" id="themeToggle">🌙 Тёмная тема</button>
 
-    <script>
-        const toggleBtn = document.getElementById('themeToggle');
-        const body = document.body;
-        
-        // Проверяем сохранённую тему
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark');
+<!-- Кнопка переключения темы -->
+<button class="theme-toggle" id="themeToggle">🌙 Тёмная тема</button>
+
+<script>
+    // ========== ТЕМНАЯ ТЕМА ==========
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀️ Светлая тема';
+    }
+    
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        if (body.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
             toggleBtn.textContent = '☀️ Светлая тема';
+        } else {
+            localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '🌙 Тёмная тема';
         }
-        
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            if (body.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-                toggleBtn.textContent = '☀️ Светлая тема';
-            } else {
-                localStorage.setItem('theme', 'light');
-                toggleBtn.textContent = '🌙 Тёмная тема';
-            }
-        });
-    </script>
+    });
+
+    // ========== МОДАЛЬНОЕ ОКНО ХОЛОДНОГО ЗВОНКА ==========
+    const modal = document.getElementById('callScriptModal');
+    const openBtn = document.getElementById('hotCallBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+</script>
+
 </body>
 </html>
